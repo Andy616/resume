@@ -41,11 +41,13 @@ export const Education: TimelineData[] = [
     date: "2019 ~ 2020",
     location: "TIBAME x Institute for Information Industry",
     title: "AI/Big Data Analyst Course",
+    logo: "/tibame.jpeg",
   },
   {
     date: "2015 ~ 2019",
     location: "National Chengchi University",
     title: "BA Economics",
+    logo: "/National_Chengchi_University_logo.png",
   },
 ]
 

@@ -26,6 +26,7 @@ export interface TimelineData {
   location: string;
   title: string;
   content?: string | React.ReactElement;
+  logo?: string;
 }
 
 /**
