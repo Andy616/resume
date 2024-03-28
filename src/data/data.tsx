@@ -38,17 +38,75 @@ export const AboutData: About = {
  */
 export const Education: TimelineData[] = [
   {
-    date: "2015 - 2019",
+    date: "2019 ~ 2020",
+    location: "TIBAME x Institute for Information Industry",
+    title: "AI/Big Data Analyst Course",
+  },
+  {
+    date: "2015 ~ 2019",
     location: "National Chengchi University",
     title: "BA Economics",
   },
-  {
-    date: "2019 - 2020",
-    location: "TIBAME x Institute for Information Industry",
-    title: "AI/Big Data Analyst Course",
-  }
 ]
 
+export const WorkExperience: TimelineData[] = [
+  {
+    date: "2021-05 ~ 2024-01",
+    location: "Red Building Capital",
+    title: "Full Stack Developer / Data Engineer",
+    content: <ul>
+      <li>
+        Led RESTful API microservices development, boosting system RPS by 30% through migrations to Django, Spring Boot, FastAPI, and Gin Gonic.
+      </li>
+      <li>
+        Implemented a robust OAuth2 authentication system, significantly enhancing internal security and data integrity.
+      </li>
+      <li>
+        Developed a geographic search system using Elasticsearch, improving location-based service efficiency and user satisfaction.
+      </li>
+      <li>
+        Streamlined development with CI/CD pipelines, cutting deployment times by 50% and accelerating project delivery.
+      </li>
+      <li>
+        Containerized VM projects with Docker and managed with Kubernetes, achieving scalable and reliable infrastructure.
+      </li>
+      <li>
+        Automated data processing with cronjobs, Elasticsearch, and Grafana, enabling real-time insights and data-driven decisions.
+      </li>
+      <li>
+        Developed deep learning models for image recognition, significantly improving application AI features and user interaction.
+      </li>
+      <li>
+        Pioneered the development of Web3 programs, focusing on ERC-4337 standards, blockchain event monitoring, and seamless integration with Web2 platforms.
+      </li>
+      <li>
+        Authored K6 testing scripts, optimizing system performance and ensuring stability under load.
+      </li>
+      <li>
+        Developed responsive web applications using Vue3, boosting user engagement by 10%.
+      </li>
+      <li>
+        Developed scalable services using AWS SDK, leveraging S3 for robust data storage solutions, RDS for reliable database management, EKS for container orchestration, and EC2 with Security Groups for enhanced security and scalability.
+      </li>
+    </ul>,
+  },
+  {
+    date: "2020-07 ~ 2021-02",
+    location: "Syncode Encryption Development Provider",
+    title: "Backend Engineer",
+    content: <ul>
+      <li>
+        Designed and implemented scalable RESTful APIs using Django.
+      </li>
+      <li>
+        Seamlessly integrated Google OAuth2 for authentication in the web application, bolstering security and simplifying the sign-in process.
+      </li>
+      <li>
+        Led the deployment of multiple projects on Google Cloud Platform using Docker, achieving 30% reduction in deployment times.
+      </li>
+    </ul>,
+  },
+]
 
 /**
  * Social items
