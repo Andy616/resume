@@ -2,6 +2,7 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import About from "@/components/sections/about";
+import Resume from "@/components/sections/resume";
 
 
 export default function Home() {
@@ -16,7 +17,11 @@ export default function Home() {
           alignItems: 'center',
         }}
       >
-        <About/>
+        <Box sx={{ m: 4 }}>
+          <About/>
+        </Box>
+
+        <Resume/>
         {/*<Typography variant="h4" component="h1" sx={{ mb: 2 }}>*/}
         {/*  Material UI - Next.js App Router example in TypeScript*/}
         {/*</Typography>*/}
