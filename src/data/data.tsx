@@ -1,4 +1,4 @@
-import { About, Social, TimelineData } from "@/data/dataDef";
+import { About, SkillGroup, Social, TimelineData } from "@/data/dataDef";
 import MapIcon from '@mui/icons-material/Map';
 import CalendarIcon from '@mui/icons-material/CalendarToday';
 import SchoolIcon from '@mui/icons-material/School';
@@ -32,6 +32,60 @@ export const AboutData: About = {
     { label: 'Employment', text: 'Playsee Co., Ltd.', Icon: BusinessIcon },
   ],
 }
+
+/**
+ * Skills section
+ */
+export const SkillGroups: SkillGroup[] = [
+  {
+    name: "Backend Development",
+    skills: [
+      { name: "Python", level: 90, },
+      { name: "Golang", level: 80, },
+      { name: "Node.js", level: 70, },
+      { name: "Java", level: 70, },
+    ]
+  },
+  {
+    name: "Frontend Development",
+    skills: [
+      { name: "Typescript", level: 80, },
+      { name: "Vue", level: 75, },
+      { name: "React", level: 70, },
+    ]
+  },
+  {
+    name: "Database",
+    skills: [
+      { name: "PostgreSQL", level: 80, },
+      { name: "MySQL", level: 80, },
+      { name: "Elasticsearch", level: 80, },
+      { name: "ScyllaDB", level: 70, },
+      { name: "Redis", level: 70, },
+      { name: "MongoDB", level: 50, },
+
+    ]
+  },
+  {
+    name: "Data & AI",
+    skills: [
+      { name: "Spark", level: 70, },
+      { name: "ArgoWorkflow", level: 40, },
+      { name: "Grafana", level: 80, },
+      { name: "Computer Vision", level: 70, },
+      { name: "Natural Language Processing", level: 40, },
+    ]
+  },
+  {
+    name: "DevOps",
+    skills: [
+      { name: "Docker", level: 80, },
+      { name: "Kubernetes", level: 50, },
+      { name: "AWS", level: 70, },
+      { name: "GCP", level: 40, },
+    ]
+  },
+]
 
 /**
  * Resume section

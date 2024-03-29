@@ -19,6 +19,19 @@ export interface AboutItem {
 }
 
 /**
+ * Skills section
+ */
+export interface Skill {
+  name: string;
+  level: number;
+}
+
+export interface SkillGroup {
+  name: string;
+  skills: Skill[];
+}
+
+/**
  * Resume section
  */
 export interface TimelineData {
