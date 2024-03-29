@@ -1,5 +1,5 @@
 import { About, SkillGroup, Social, TimelineData } from "@/data/dataDef";
-import MapIcon from '@mui/icons-material/Map';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarIcon from '@mui/icons-material/CalendarToday';
 import SchoolIcon from '@mui/icons-material/School';
 import BusinessIcon from '@mui/icons-material/Business';
@@ -26,7 +26,7 @@ export const AboutData: About = {
             harum ipsum laudantium, nihil quidem quisquam reprehenderit totam, ut voluptatem! Cupiditate dolore
             molestias quod rem rerum!`,
   aboutItems: [
-    { label: 'Location', text: 'Taipei, Taiwan', Icon: MapIcon },
+    { label: 'Location', text: 'Taipei, Taiwan', Icon: LocationOnIcon },
     { label: 'Age', text: (new Date().getFullYear() - 1998).toString(), Icon: CalendarIcon },
     { label: 'Study', text: 'National Chengchi University', Icon: SchoolIcon },
     { label: 'Employment', text: 'Playsee Co., Ltd.', Icon: BusinessIcon },
@@ -168,10 +168,6 @@ export const WorkExperience: TimelineData[] = [
  * Social items
  */
 export const SocialLinks: Social[] = [
-  { label: 'Github', Icon: GitHubIcon, href: 'https://github.com/andy616' },
-  {
-    label: 'LinkedIn',
-    Icon: LinkedInIcon,
-    href: 'https://www.linkedin.com/in/%E5%85%83%E6%A6%AE-%E9%83%AD-b64985198/'
-  },
+  {label: 'Github', Icon: GitHubIcon, href: 'https://github.com/andy616'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/%E5%85%83%E6%A6%AE-%E9%83%AD-b64985198/'},
 ];
