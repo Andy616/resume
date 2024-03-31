@@ -49,4 +49,5 @@ export interface Social {
   label: string;
   Icon: OverridableComponent<SvgIconTypeMap>;
   href: string;
+  text: string;
 }

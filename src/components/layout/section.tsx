@@ -7,7 +7,7 @@ const Section: FC<
   PropsWithChildren<{ sectionId: SectionId; sectionTitle?: string }>
 > = memo(function Section({ children, sectionId }) {
   return (
-    <Box component="section" id={ sectionId }>
+    <Box component="section" id={ sectionId } sx={{ width: "100%" }}>
       <Box sx={{ mx: "auto", maxWidth: "lg" }}>{children}</Box>
     </Box>
   )
