@@ -3,6 +3,8 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import About from "@/components/sections/about";
 import Resume from "@/components/sections/resume";
+import Footer from "@/components/sections/footer";
+import Contact from "@/components/sections/contact";
 
 
 export default function Home() {
@@ -22,12 +24,8 @@ export default function Home() {
         </Box>
 
         <Resume/>
-        {/*<Typography variant="h4" component="h1" sx={{ mb: 2 }}>*/}
-        {/*  Material UI - Next.js App Router example in TypeScript*/}
-        {/*</Typography>*/}
-        {/*<Link href="/about" color="secondary" component={NextLink}>*/}
-        {/*  Go to the about page*/}
-        {/*</Link>*/}
+        <Contact/>
+        <Footer/>
       </Box>
     </Container>
   );
