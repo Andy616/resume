@@ -10,10 +10,8 @@ import EmailIcon from '@mui/icons-material/Email';
 
 export const SectionId = {
   About: 'about',
-  Contact: 'contact',
-  Portfolio: 'portfolio',
   Resume: 'resume',
-  Skills: 'skills',
+  Contact: 'contact',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
