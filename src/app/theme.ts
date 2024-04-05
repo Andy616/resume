@@ -1,6 +1,9 @@
 'use client';
 import { Roboto } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
+import { grey } from '@mui/material/colors';
+import { PaletteMode, ThemeOptions } from '@mui/material';
+
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -8,9 +11,16 @@ const roboto = Roboto({
   display: 'swap',
 });
 
-const theme = createTheme({
+
+const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
   palette: {
-    mode: 'light',
+    mode,
+    ...(mode === 'dark' && {
+      background: {
+        default: grey[900],
+        paper: 'rgba(100,100,100,0.5)',
+      },
+    }),
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
@@ -27,5 +37,7 @@ const theme = createTheme({
     },
   },
 });
+
+const theme = createTheme(getDesignTokens('dark'))
 
 export default theme;
