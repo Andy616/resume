@@ -19,7 +19,7 @@ const About: FC = memo(function About() {
             <Avatar 
               alt="profile picture" 
               src={profileImageSrc} 
-              sx={{ width: 200, height: 200, mx: "auto" }}
+              sx={{ width: 200, height: 200, mx: "auto", my: 2 }}
               component={Paper}
               elevation={8}
             />
