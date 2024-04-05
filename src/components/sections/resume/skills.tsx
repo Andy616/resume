@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, memo } from "react";
-import { LinearProgress, linearProgressClasses } from "@mui/material";
+import { LinearProgress, Paper, linearProgressClasses } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import { Skill as SkillType, SkillGroup } from '@/data/dataDef';
 import Typography from "@mui/material/Typography";
@@ -40,14 +40,14 @@ const Skills: FC<{ skillGroup: SkillGroup[] }> = memo(function Skills({ skillGro
 
       {skillGroup.map(({ name, skills }, idx) => (
         <Grid key={idx} xs={12} sm={6} md={4}>
-          <Box sx={{ mx: 4, my: 2 }}>
-            <Typography component="div" variant="h6" textAlign="center">{name}</Typography>
+          <Paper elevation={4} sx={{ mx: 4, my: 2, p: 4, backgroundColor: 'divider', borderRadius: 4 }}>
+            <Typography component="div" variant="h6" textAlign="center" sx={{ pb: 2 }}>{name}</Typography>
             {skills.map((skill, idx) => (
               <Box key={idx} sx={{ my: 1 }}>
                 <Skill skill={skill}/>
               </Box>
             ))}
-          </Box>
+          </Paper>
         </Grid>
       ))}
 
