@@ -13,8 +13,8 @@ const Header = dynamic(() => import('@/components/sections/header'), {ssr: false
 export default function Home() {
   return (
     <Container maxWidth="lg">
-      <Paper elevation={4} sx={{ my: 4, borderRadius: 8 }}>
-        <Header/>
+      <Header/>
+      <Paper elevation={4} sx={{ my: 4, borderRadius: 8, backdropFilter: 'blur(4px)' }}>
         <About/>
         <Resume/>
         <Contact/>
