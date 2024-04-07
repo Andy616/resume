@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, memo, useState, useMemo, useCallback } from 'react';
+import React, { FC, memo, useState, useMemo, useCallback } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Tabs from '@mui/material/Tabs';
@@ -12,17 +12,13 @@ import { useNavObserver } from '@/hooks/useNavObserver';
 function samePageLinkNavigation(
   event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 ) {
-  if (
-    event.defaultPrevented ||
+  return !(event.defaultPrevented ||
     event.button !== 0 || // ignore everything but left-click
     event.metaKey ||
     event.ctrlKey ||
     event.altKey ||
     event.shiftKey
-  ) {
-    return false;
-  }
-  return true;
+  )
 }
 
 interface LinkTabProps {
