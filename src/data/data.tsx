@@ -173,6 +173,10 @@ export const WorkExperience: TimelineData[] = [
   },
 ]
 
+export const ContactWordings: string = "          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores atque corporis doloribus ea,\n" +
+  "          harum ipsum laudantium, nihil quidem quisquam reprehenderit totam, ut voluptatem! Cupiditate dolore\n" +
+  "          molestias quod rem rerum!"
+
 /**
  * Social items
  */

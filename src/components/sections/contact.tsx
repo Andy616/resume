@@ -11,7 +11,9 @@ import { useTheme } from '@mui/material/styles';
 
 import Section from "@/components/layout/section";
 import Globe from "@/components/globe";
-import { SectionId, SocialLinks } from "@/data/data";
+import { ContactWordings, SectionId, SocialLinks } from "@/data/data";
+import Divider from "@mui/material/Divider";
+import TextBox from "@/components/textbox";
 
 
 const Contact: FC = memo(function Contact() {
@@ -20,16 +22,15 @@ const Contact: FC = memo(function Contact() {
 
   return (
     <Section sectionId={SectionId.Contact}>
-      <Box sx={{ m: 4 }}>
+      {/*@ts-ignore*/}
+      <Box>
 
-        <Typography component="div" variant="h4" textAlign="center" m={4}>
-          Get in touch
-        </Typography>
+        <Divider variant="middle">
+          <TextBox text={"Get In Touch"}/>
+        </Divider>
 
-        <Typography sx={{ mb: 8 }} textAlign="center">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores atque corporis doloribus ea,
-          harum ipsum laudantium, nihil quidem quisquam reprehenderit totam, ut voluptatem! Cupiditate dolore
-          molestias quod rem rerum!
+        <Typography sx={{ mx: 4, mb: 8 }} textAlign="center">
+          {ContactWordings}
         </Typography>
 
         <Grid container spacing={4}>
