@@ -8,7 +8,7 @@ import React from "react";
  */
 export interface About {
   profileImageSrc: string;
-  description: string;
+  description: string | React.ReactElement;
   aboutItems: AboutItem[];
 }
 

@@ -21,9 +21,26 @@ export type SectionId = (typeof SectionId)[keyof typeof SectionId];
  */
 export const AboutData: About = {
   profileImageSrc: "/profile.jpeg",  // root is public folder
-  description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores atque corporis doloribus ea,
-            harum ipsum laudantium, nihil quidem quisquam reprehenderit totam, ut voluptatem! Cupiditate dolore
-            molestias quod rem rerum!`,
+  description: <>
+    {`
+    I'm a passionate Software Engineer based in Taipei,
+    with ${new Date().getFullYear() - 2020} years of experience in the tech industry.
+    Throughout my career, I've tackled a wide array of projects, 
+    from developing scalable web services to crafting AI-driven solutions designed to elevate the user experience.
+    `}
+    <br/><br/>
+    {`
+    My core strengths lie in full-stack web development, data engineering, and machine learning. 
+    I have a keen interest in artificial intelligence and 
+    am constantly seeking new challenges that stretch the limits of current technological capabilities.
+    `}
+    <br/><br/>
+    {`
+    I excel in environments that present complex problems, 
+    as I am always eager to delve into new technologies and methodologies 
+    to refine my skills and push the envelope of what's possible.
+    `}
+  </>,
   aboutItems: [
     { label: 'Location', text: 'Taipei, Taiwan', Icon: LocationOnIcon },
     { label: 'Age', text: (new Date().getFullYear() - 1998).toString(), Icon: CalendarIcon },
@@ -173,9 +190,11 @@ export const WorkExperience: TimelineData[] = [
   },
 ]
 
-export const ContactWordings: string = "          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores atque corporis doloribus ea,\n" +
-  "          harum ipsum laudantium, nihil quidem quisquam reprehenderit totam, ut voluptatem! Cupiditate dolore\n" +
-  "          molestias quod rem rerum!"
+export const ContactWordings: string = `
+  I'm passionate about what I do and always eager to engage with like-minded individuals. 
+  Whether you're interested in discussing a project, sharing opportunities, 
+  potential partnerships, or just having a chat, 
+  don't hesitate to get in touch! I'm just a message away.`
 
 /**
  * Social items
