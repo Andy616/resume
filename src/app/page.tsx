@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Container maxWidth="lg">
       <Header/>
-      <Paper elevation={4} sx={{ my: 4, borderRadius: 8, backdropFilter: 'blur(4px)' }}>
+      <Paper elevation={4} sx={{ my: 10, borderRadius: 8, backdropFilter: 'blur(4px)' }}>
         <About/>
         <Resume/>
         <Contact/>
