@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 
 
 export const useNavObserver = (
@@ -46,7 +46,9 @@ export const useNavObserver = (
       },
       {
         root: null,
-        threshold: 0.1,
+        // setting threshold may have issues on longer elements on devices with small screen (observer never fires)
+        // reference: https://stackoverflow.com/a/66296942/24577447
+        threshold: 0,
         rootMargin: '0px 0px -70% 0px',
       },
     );
