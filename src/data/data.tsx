@@ -8,6 +8,14 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 
 
+export const SiteMetadata = {
+  title: "Andy Kuo - Software Engineer",
+  description: "Welcome to explore my portfolio! Feel free to reach out and connect with me for inquiries or collaborations.",
+  url: "https://andykuo.me",
+  keywords: ["resume", "portfolio", "software engineer", "full-stack", "data engineer", "machine learning", "AI"],
+}
+
+
 export const SectionId = {
   About: 'about',
   Resume: 'resume',
