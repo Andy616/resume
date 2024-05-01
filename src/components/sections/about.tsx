@@ -13,7 +13,7 @@ const About: FC = memo(function About() {
   const { profileImageSrc, description, aboutItems } = AboutData
   return (
     <Section sectionId={SectionId.About}>
-      <Container fixed sx={{ mt: 4 }}>
+      <Container fixed sx={{ mt: 8 }}>
         <Grid container sx={{ mx: 1, justifyContent: 'center' }}>
           <Grid xs={12} md={3} alignContent='center'>
             <Avatar
@@ -40,12 +40,12 @@ const About: FC = memo(function About() {
           </Grid>
 
           <Paper elevation={4} sx={{ borderRadius: 4, backgroundColor: 'divider', mx: 4, mt: 4 }}>
-            <Typography component="div" sx={{ m: 2, px: 2 }}>
-              <Box component="h2" sx={{ fontWeight: "bold", textAlign: 'center' }}>About me</Box>
+            <Typography component="div" sx={{ my: 4, mx: 6 }}>
+              <Box component="h2" sx={{ fontWeight: "bold", textAlign: 'center' }}>About Me</Box>
               <Box component="p" sx={{ color: "text.secondary" }}>{description}</Box>
             </Typography>
 
-            <Grid container sx={{ m: 2 }}>
+            <Grid container sx={{ m: 4 }}>
               {aboutItems.map(({ label, text, Icon }, idx) => (
                 <Grid xs={12} sm={6} key={idx} sx={{ p: 2 }}>
                   <Stack direction="row">
