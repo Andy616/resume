@@ -19,7 +19,7 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
     ...(mode === 'dark' && {
       background: {
         default: grey[900],
-        paper: 'rgba(100,100,100,0.1)',
+        paper: 'rgba(255,255,255,0)',
       },
     }),
   },
