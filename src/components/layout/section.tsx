@@ -1,6 +1,6 @@
-import Box from '@mui/material/Box';
 import { FC, PropsWithChildren, memo } from "react";
 import { SectionId } from "@/data/data";
+import Box from "@/components/box";
 
 
 const Section: FC<
@@ -12,7 +12,6 @@ const Section: FC<
   return (
     // pt is used to offset appbar
     <Box component="section" id={sectionId} sx={{ width: "100%", py: paddingY ?? 4 }}>
-      {/* @ts-ignore */}
       <Box sx={{ mx: "auto", maxWidth: "lg" }}>{children}</Box>
     </Box>
   )

@@ -1,10 +1,10 @@
 'use client';
 
 import { FC, memo } from 'react';
-import Box from "@mui/material/Box";
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import IconButton from '@mui/material/IconButton';
 import { SectionId } from '@/data/data';
+import Box from "@/components/box";
 
 function scrollToTop() {
   window.scrollTo(0, 0)

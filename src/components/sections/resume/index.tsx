@@ -5,8 +5,8 @@ import TimeLines from "@/components/timelines";
 import Divider from '@mui/material/Divider';
 import TextBox from "@/components/textbox";
 import Education from "@/components/sections/resume/education";
-import Box from "@mui/material/Box";
 import Skills from "@/components/sections/resume/skills";
+import Box from "@/components/box";
 
 
 const Resume: FC = memo(function Resume() {

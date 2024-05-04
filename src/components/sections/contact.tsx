@@ -1,19 +1,19 @@
 'use client';
 
 import { FC, memo } from "react";
-import Box from "@mui/material/Box";
 import { Link } from "@mui/material";
 import Grid from "@mui/system/Unstable_Grid";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import IconButton from '@mui/material/IconButton';
 import { useTheme } from '@mui/material/styles';
+import Divider from "@mui/material/Divider";
 
 import Section from "@/components/layout/section";
 import Globe from "@/components/globe";
 import { ContactWordings, SectionId, SocialLinks } from "@/data/data";
-import Divider from "@mui/material/Divider";
 import TextBox from "@/components/textbox";
+import Box from "@/components/box";
 
 
 const Contact: FC = memo(function Contact() {
@@ -22,7 +22,6 @@ const Contact: FC = memo(function Contact() {
 
   return (
     <Section sectionId={SectionId.Contact}>
-      {/*@ts-ignore*/}
       <Box>
 
         <Divider variant="middle">

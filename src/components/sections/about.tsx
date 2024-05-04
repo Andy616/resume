@@ -3,8 +3,8 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/system/Unstable_Grid";
 import { Avatar, Paper, Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
 
+import Box from "@/components/box";
 import Section from "@/components/layout/section";
 import { AboutData, SectionId } from "@/data/data";
 

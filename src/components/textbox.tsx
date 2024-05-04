@@ -1,8 +1,8 @@
 'use client';
 
 import { FC, memo } from "react";
-import Box from "@mui/material/Box";
 import theme from "@/app/theme";
+import Box from "@/components/box";
 
 
 const TextBox: FC<{ text: string }> = memo(function TextBox({ text }) {

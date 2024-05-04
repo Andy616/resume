@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 import { Skill as SkillType, SkillGroup } from '@/data/dataDef';
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/system/Unstable_Grid";
-import Box from "@mui/material/Box";
+import Box from "@/components/box";
 
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
