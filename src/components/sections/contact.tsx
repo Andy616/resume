@@ -28,7 +28,7 @@ const Contact: FC = memo(function Contact() {
           <TextBox text={"Contact"}/>
         </Divider>
 
-        <Typography sx={{ mx: 4, mb: 8 }} textAlign="center">
+        <Typography sx={{ mx: 4, my: 4 }} textAlign="center">
           {ContactWordings}
         </Typography>
 
