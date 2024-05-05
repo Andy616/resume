@@ -4,9 +4,7 @@ import { FC, memo } from "react";
 import { Link } from "@mui/material";
 import Grid from "@mui/system/Unstable_Grid";
 import Typography from "@mui/material/Typography";
-import useMediaQuery from '@mui/material/useMediaQuery';
 import IconButton from '@mui/material/IconButton';
-import { useTheme } from '@mui/material/styles';
 import Divider from "@mui/material/Divider";
 
 import Section from "@/components/layout/section";
@@ -14,11 +12,11 @@ import Globe from "@/components/globe";
 import { ContactWordings, SectionId, SocialLinks } from "@/data/data";
 import TextBox from "@/components/textbox";
 import Box from "@/components/box";
+import { useBreakpointDetector } from "@/hooks/useBreakpointDetector";
 
 
 const Contact: FC = memo(function Contact() {
-  const theme = useTheme();
-  const isMobile = !useMediaQuery(theme.breakpoints.up('sm'));
+  const isMobile = useBreakpointDetector();
 
   return (
     <Section sectionId={SectionId.Contact}>

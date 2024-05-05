@@ -1,18 +1,16 @@
 "use client";
 
 import { FC, memo } from "react";
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 import Grid from "@mui/system/Unstable_Grid";
 import Typography from "@mui/material/Typography";
 import { Avatar } from "@mui/material";
 
 import { Education as EducationData } from "@/data/data";
+import { useBreakpointDetector } from "@/hooks/useBreakpointDetector";
 
 
 const Education: FC = memo(function Education() {
-  const theme = useTheme();
-  const isMobile = !useMediaQuery(theme.breakpoints.up('sm'));
+  const isMobile = useBreakpointDetector();
   return (
     <Grid container>
       {EducationData.map(({ date, location, title, logo }, idx) => (

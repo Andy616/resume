@@ -13,7 +13,7 @@ import 'swiper/css/pagination';
 
 import { Skill as SkillType, SkillGroup as SkillGroupType } from '@/data/dataDef';
 import Box from "@/components/box";
-import { underBreakpoint } from "@/components/util";
+import { useBreakpointDetector } from "@/hooks/useBreakpointDetector";
 
 import "@/static/skills.css";
 
@@ -58,7 +58,7 @@ const SkillGroup: FC<{ skillGroup: SkillGroupType }> = memo(function SkillGroup(
 
 
 const Skills: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ skillGroups }) {
-  const isMobile = underBreakpoint()
+  const isMobile = useBreakpointDetector()
   return (
     <Suspense>
       <Swiper
