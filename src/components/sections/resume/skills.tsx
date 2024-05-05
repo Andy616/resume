@@ -1,12 +1,21 @@
 'use client';
 
-import { FC, memo } from "react";
+import { FC, Suspense, memo } from "react";
 import { LinearProgress, Paper, linearProgressClasses } from "@mui/material";
 import { styled } from '@mui/material/styles';
-import { Skill as SkillType, SkillGroup } from '@/data/dataDef';
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/system/Unstable_Grid";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+
+import { Skill as SkillType, SkillGroup as SkillGroupType } from '@/data/dataDef';
 import Box from "@/components/box";
+import { underBreakpoint } from "@/components/util";
+
+import "@/static/skills.css";
 
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -34,24 +43,52 @@ const Skill: FC<{ skill: SkillType }> = memo(function Skill({ skill }) {
 })
 
 
-const Skills: FC<{ skillGroup: SkillGroup[] }> = memo(function Skills({ skillGroup }) {
+const SkillGroup: FC<{ skillGroup: SkillGroupType }> = memo(function SkillGroup({ skillGroup }) {
   return (
-    <Grid container>
-
-      {skillGroup.map(({ name, skills }, idx) => (
-        <Grid key={idx} xs={12} sm={6} md={4}>
-          <Paper elevation={4} sx={{ mx: 4, my: 2, p: 4, backgroundColor: 'divider', borderRadius: 4 }}>
-            <Typography component="div" variant="h6" textAlign="center" sx={{ pb: 2 }}>{name}</Typography>
-            {skills.map((skill, idx) => (
-              <Box key={idx} sx={{ my: 1 }}>
-                <Skill skill={skill}/>
-              </Box>
-            ))}
-          </Paper>
-        </Grid>
+    <Paper elevation={4} sx={{ mx: 4, my: 2, p: 4, backgroundColor: 'divider', borderRadius: 4 }}>
+      <Typography component="div" variant="h6" textAlign="center" sx={{ pb: 2 }}>{skillGroup.name}</Typography>
+      {skillGroup.skills.map((skill, idx) => (
+        <Box key={idx} sx={{ my: 1 }}>
+          <Skill skill={skill}/>
+        </Box>
       ))}
+    </Paper>
+  )
+})
 
-    </Grid>
+
+const Skills: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ skillGroups }) {
+  const isMobile = underBreakpoint()
+  return (
+    <Suspense>
+      <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: -8,
+          stretch: 0,
+          depth: 300,
+          modifier: 2,
+          slideShadows: false,
+        }}
+        pagination={{
+          clickable: true,
+          // dynamicBullets: true,
+        }}
+        modules={[EffectCoverflow, Pagination]}
+      >
+        {
+          skillGroups.map((skillGroup, idx) => (
+            // fixme: items not centered when using larger width
+            <SwiperSlide key={idx} style={{ width: isMobile ? 300 : 300 }}>
+              <SkillGroup skillGroup={skillGroup}/>
+            </SwiperSlide>
+          ))
+        }
+      </Swiper>
+    </Suspense>
   )
 })
 

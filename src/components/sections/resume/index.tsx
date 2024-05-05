@@ -18,7 +18,7 @@ const Resume: FC = memo(function Resume() {
         <TextBox text={"Skills"}/>
       </Divider>
       <Box sx={{ mx: 4 }}>
-        <Skills skillGroup={SkillGroups}/>
+        <Skills skillGroups={SkillGroups}/>
       </Box>
 
       <Divider variant="middle">
