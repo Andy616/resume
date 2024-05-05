@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, Suspense, memo } from "react";
+import { FC, memo } from "react";
 import { LinearProgress, Paper, linearProgressClasses } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import Typography from "@mui/material/Typography";
@@ -13,7 +13,6 @@ import 'swiper/css/pagination';
 
 import { Skill as SkillType, SkillGroup as SkillGroupType } from '@/data/dataDef';
 import Box from "@/components/box";
-import { useBreakpointDetector } from "@/hooks/useBreakpointDetector";
 
 import "@/static/skills.css";
 
@@ -58,9 +57,9 @@ const SkillGroup: FC<{ skillGroup: SkillGroupType }> = memo(function SkillGroup(
 
 
 const Skills: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ skillGroups }) {
-  const isMobile = useBreakpointDetector()
   return (
-    <Suspense>
+    <>
+
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -81,14 +80,15 @@ const Skills: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ ski
       >
         {
           skillGroups.map((skillGroup, idx) => (
-            // fixme: items not centered when using larger width
-            <SwiperSlide key={idx} style={{ width: isMobile ? 300 : 300 }}>
+            // add width style here with media query causes error, slides will not be centered
+            <SwiperSlide key={idx}>
               <SkillGroup skillGroup={skillGroup}/>
             </SwiperSlide>
           ))
         }
       </Swiper>
-    </Suspense>
+
+    </>
   )
 })
 
