@@ -73,3 +73,4 @@ jobs:
           external_repository: Andy616/Andy616.github.io  # Replace with your Repo B path
           publish_branch: gh-pages  # or main/master if that's where your GitHub Pages are served from
           publish_dir: ./out  # Update this to your static site output directory
+          cname: andykuo.me
