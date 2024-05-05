@@ -24,7 +24,7 @@ const Resume: FC = memo(function Resume() {
       <Divider variant="middle">
         <TextBox text={"Experience"}/>
       </Divider>
-      <Box sx={{ m: 4 }}>
+      <Box sx={{ my: 4 }}>
         <TimeLines items={WorkExperience}/>
       </Box>
 

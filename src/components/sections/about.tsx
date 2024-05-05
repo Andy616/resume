@@ -30,19 +30,19 @@ const About: FC = memo(function About() {
             sx={{ alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}
           >
 
-            <Typography component={'h3'} variant={'h3'}>
+            <Typography component={'h3'} variant={'h3'} textAlign={'center'}>
               {"I'm Andy Kuo,"}
             </Typography>
-            <Typography component={'h4'} variant={'h4'}>
+            <Typography component={'h4'} variant={'h4'} textAlign={'center'}>
               {"a software engineer."}
             </Typography>
 
           </Grid>
 
           <Paper elevation={4} sx={{ borderRadius: 4, backgroundColor: 'divider', mx: 4, mt: 4 }}>
-            <Typography component="div" sx={{ my: 4, mx: 6 }}>
+            <Typography component="div" sx={{ my: 4, mx: 4 }}>
               <Box component="h2" sx={{ fontWeight: "bold", textAlign: 'center' }}>About Me</Box>
-              <Box component="p" sx={{ color: "text.secondary" }}>{description}</Box>
+              <Box component="p" sx={{ color: "text.secondary", mt: 2 }}>{description}</Box>
             </Typography>
 
             <Grid container sx={{ m: 4 }}>
