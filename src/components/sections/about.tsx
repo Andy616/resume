@@ -41,7 +41,7 @@ const About: FC = memo(function About() {
 
           <Paper elevation={4} sx={{ borderRadius: 4, backgroundColor: 'divider', mx: 4, mt: 4 }}>
             <Typography component="div" sx={{ my: 4, mx: 4 }}>
-              <Box component="h2" sx={{ fontWeight: "bold", textAlign: 'center' }}>About Me</Box>
+              <Typography component="div" variant="h6" sx={{ fontWeight: "bold", textAlign: 'center' }}>About Me</Typography>
               <Box component="p" sx={{ color: "text.secondary", mt: 2 }}>{description}</Box>
             </Typography>
 
