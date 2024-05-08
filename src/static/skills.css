@@ -5,18 +5,18 @@
     margin-bottom: 36px;
 }
 
-@media (max-width: 600px) {
-    .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 300px;
-    }
-}
+/*@media (max-width: 600px) {*/
+/*    .swiper-slide {*/
+/*        background-position: center;*/
+/*        background-size: cover;*/
+/*        width: 300px;*/
+/*    }*/
+/*}*/
 
-@media (min-width: 600px) {
-    .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 500px;
-    }
-}
+/*@media (min-width: 600px) {*/
+/*    .swiper-slide {*/
+/*        background-position: center;*/
+/*        background-size: cover;*/
+/*        width: 500px;*/
+/*    }*/
+/*}*/

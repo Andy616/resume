@@ -13,6 +13,7 @@ import 'swiper/css/pagination';
 
 import { Skill as SkillType, SkillGroup as SkillGroupType } from '@/data/dataDef';
 import Box from "@/components/box";
+import { useBreakpointDetector } from "@/hooks/useBreakpointDetector";
 
 import "@/static/skills.css";
 
@@ -57,10 +58,9 @@ const SkillGroup: FC<{ skillGroup: SkillGroupType }> = memo(function SkillGroup(
 })
 
 
-const Skills: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ skillGroups }) {
+const SkillsMobile: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ skillGroups }) {
   return (
     <>
-
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -82,13 +82,63 @@ const Skills: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ ski
         {
           skillGroups.map((skillGroup, idx) => (
             // add width style here with media query causes error, slides will not be centered
-            <SwiperSlide key={idx}>
+            <SwiperSlide key={idx} style={{ width: 300 }}>
               <SkillGroup skillGroup={skillGroup}/>
             </SwiperSlide>
           ))
         }
       </Swiper>
+    </>
+  )
+})
 
+
+const SkillsDesktop: FC<{ skillGroups: SkillGroupType[]}> = memo(function Skills({ skillGroups }) {
+
+  return (
+    <>
+      <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: -8,
+          stretch: 0,
+          depth: 200,
+          modifier: 2,
+          slideShadows: false,
+        }}
+        pagination={{
+          clickable: true,
+          // dynamicBullets: true,
+        }}
+        modules={[EffectCoverflow, Pagination]}
+      >
+        {
+          skillGroups.map((skillGroup, idx) => (
+            // add width style here with media query causes error, slides will not be centered
+            <SwiperSlide key={idx} style={{ width: 500 }}>
+              <SkillGroup skillGroup={skillGroup}/>
+            </SwiperSlide>
+          ))
+        }
+      </Swiper>
+    </>
+  )
+})
+
+
+const Skills: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ skillGroups }) {
+  const isMobile = useBreakpointDetector()
+  // can only create 2 different component for mobile and desktop setup
+  return (
+    <>
+      {
+        isMobile ?
+          <SkillsMobile skillGroups={skillGroups}/> :
+          <SkillsDesktop skillGroups={skillGroups}/>
+      }
     </>
   )
 })
