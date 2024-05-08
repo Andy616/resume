@@ -3,17 +3,31 @@
 import { FC, memo } from "react";
 import theme from "@/app/theme";
 import Box from "@/components/box";
+import Typography from "@mui/material/Typography";
+import { Variant } from "@mui/material/styles/createTypography";
+import * as React from "react";
 
 
-const TextBox: FC<{ text: string }> = memo(function TextBox({ text }) {
+interface TextBoxProps {
+  text: string,
+  component?: React.ElementType,
+  variant?: Variant,
+}
+
+const TextBox: FC<TextBoxProps> = memo(function TextBox(
+  { text , component = "div", variant = "h6" }
+) {
   return (
     <Box
-      component="h2"
       border={1}
       borderColor="text.secondary"
       borderRadius={theme.shape.borderRadius * 4}
       sx={{ fontWeight: "bold", p: 2 }}
-    >{text}</Box>
+    >
+      <Typography component={component} variant={variant}>
+        {text}
+      </Typography>
+    </Box>
   )
 })
 
