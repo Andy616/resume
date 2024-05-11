@@ -1,8 +1,8 @@
 body {
-    background: linear-gradient(90deg, #002455, #00bdff);
-    /*background: linear-gradient(-45deg, #090c33, #113860, #00a6ff, #3339a4);*/
-    background-size: 200% 200%;
-    /*animation: gradient 10s ease infinite;*/
+    /* background: linear-gradient(180deg, #00bdff, #d341ed, #9166f5, #050251); */
+    background: linear-gradient(180deg, #3162b1, #320c39, #12003d, #02002f);
+    /* background-size: 200% 200%;
+    animation: gradient 10s ease infinite; */
 }
 
 @keyframes gradient {
