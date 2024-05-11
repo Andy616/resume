@@ -3,3 +3,8 @@
         padding-inline-start: 20px;
     }
 }
+
+.list-content li {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}

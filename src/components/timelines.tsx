@@ -39,7 +39,7 @@ const TimeLines: FC<{ items: TimelineData[] }> = memo(function TimeLines({ items
               {title}
               <Typography variant="subtitle1" component="span"> @ {location}</Typography>
             </Typography>
-            <Typography component='div' sx={{ color: "text.secondary", py: 2 }}>{content}</Typography>
+            <Typography component='div' sx={{ color: "text.secondary", py: 2 }} className='list-content'>{content}</Typography>
           </TimelineContent>
         </TimelineItem>
       ))}
