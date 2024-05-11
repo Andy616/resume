@@ -13,6 +13,8 @@ import SectionTitle from "@/components/sections/sectionTitle";
 import { ContactWordings, SectionId, SocialLinks } from "@/data/data";
 import { useBreakpointDetector } from "@/hooks/useBreakpointDetector";
 
+import "@/static/animation.css";
+
 
 const Contact: FC = memo(function Contact() {
   const isMobile = useBreakpointDetector();
@@ -36,9 +38,32 @@ const Contact: FC = memo(function Contact() {
           {SocialLinks.map((social, idx) => (
             <Grid key={idx} xs={12} sm={4} textAlign={'center'}>
 
-              <IconButton aria-label={social.label} href={social.href} target='_blank'>
+              <IconButton 
+                aria-label={social.label} 
+                href={social.href} 
+                target='_blank'
+                className={'icon-frame'}
+                sx={{ 
+                  border: 1, borderColor: '#fff', borderRadius: '50%',
+                  p: 4, m: 2 
+                }}
+              >
                 <social.Icon sx={{ width: 64, height: 64 }}/>
               </IconButton>
+
+              {/* <svg width={0} height={0} style={{ zIndex: 0 }}>
+                <filter id="wavy">
+                  <feTurbulence x={0} y={0} baseFrequency={0.0009} numOctaves={5} seed={2}>
+                    <animate 
+                      attributeName="baseFrequency" 
+                      dur={'30s'} 
+                      values="0.1;0.05;0.1"
+                      repeatCount={'indefinite'}
+                    ></animate>
+                  </feTurbulence>
+                  <feDisplacementMap in="SourceGraphic" scale={5}></feDisplacementMap>
+                </filter>
+              </svg> */}
 
               <Typography component={'div'}>
                 <Link
