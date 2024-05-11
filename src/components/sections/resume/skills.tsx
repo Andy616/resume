@@ -69,7 +69,7 @@ const SkillsMobile: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills
         coverflowEffect={{
           rotate: -8,
           stretch: 0,
-          depth: 300,
+          depth: 250,
           modifier: 2,
           slideShadows: false,
         }}
@@ -82,7 +82,7 @@ const SkillsMobile: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills
         {
           skillGroups.map((skillGroup, idx) => (
             // add width style here with media query causes error, slides will not be centered
-            <SwiperSlide key={idx} style={{ width: 300 }}>
+            <SwiperSlide key={idx} style={{ width: 350 }}>
               <SkillGroup skillGroup={skillGroup}/>
             </SwiperSlide>
           ))

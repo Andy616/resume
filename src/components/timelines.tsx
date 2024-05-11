@@ -10,6 +10,8 @@ import { FC, memo } from "react";
 import { TimelineData } from "@/data/dataDef";
 import Typography from "@mui/material/Typography";
 
+import "@/static/experience.css";
+
 
 const TimeLines: FC<{ items: TimelineData[] }> = memo(function TimeLines({ items }) {
 

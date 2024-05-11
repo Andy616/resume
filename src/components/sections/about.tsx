@@ -13,8 +13,8 @@ const About: FC = memo(function About() {
   const { profileImageSrc, description, aboutItems } = AboutData
   return (
     <Section sectionId={SectionId.About}>
-      <Container fixed sx={{ mt: 8 }}>
-        <Grid container sx={{ mx: 1, justifyContent: 'center' }}>
+      <Container fixed sx={{ mt: 8, px: 0 }}>
+        <Grid container sx={{ justifyContent: 'center' }}>
           <Grid xs={12} md={3} alignContent='center'>
             <Avatar
               alt="profile picture"
@@ -39,7 +39,7 @@ const About: FC = memo(function About() {
 
           </Grid>
 
-          <Paper elevation={4} sx={{ borderRadius: 4, backgroundColor: 'divider', mx: 4, mt: 4 }}>
+          <Paper elevation={4} sx={{ borderRadius: 4, backgroundColor: 'divider', mt: 4 }}>
             <Typography component="div" sx={{ my: 4, mx: 4 }}>
               <Typography component="div" variant="h6" sx={{ fontWeight: "bold", textAlign: 'center' }}>About Me</Typography>
               <Box component="p" sx={{ color: "text.secondary", mt: 2 }}>{description}</Box>
