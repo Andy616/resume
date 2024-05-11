@@ -33,7 +33,7 @@ const Resume: FC = memo(function Resume() {
         <Divider variant="middle">
           <TextBox text={"Education"}/>
         </Divider>
-        <Box sx={{ m: 4 }}>
+        <Box sx={{ my: 4 }}>
           <Education/>
         </Box>
       </Container>
