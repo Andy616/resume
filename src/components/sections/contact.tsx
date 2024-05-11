@@ -5,13 +5,12 @@ import { Link } from "@mui/material";
 import Grid from "@mui/system/Unstable_Grid";
 import Typography from "@mui/material/Typography";
 import IconButton from '@mui/material/IconButton';
-import Divider from "@mui/material/Divider";
 
 import Section from "@/components/layout/section";
 import Globe from "@/components/globe";
-import { ContactWordings, SectionId, SocialLinks } from "@/data/data";
-import TextBox from "@/components/textbox";
 import Box from "@/components/box";
+import SectionTitle from "@/components/sections/sectionTitle";
+import { ContactWordings, SectionId, SocialLinks } from "@/data/data";
 import { useBreakpointDetector } from "@/hooks/useBreakpointDetector";
 
 
@@ -22,9 +21,11 @@ const Contact: FC = memo(function Contact() {
     <Section sectionId={SectionId.Contact}>
       <Box>
 
-        <Divider variant="middle">
-          <TextBox text={"Contact"}/>
-        </Divider>
+        <SectionTitle 
+          textBoxProps={{
+            text: "Contact"
+          }}
+        />
 
         <Typography sx={{ mx: 4, my: 4 }} textAlign="center">
           {ContactWordings}

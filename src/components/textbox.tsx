@@ -8,17 +8,19 @@ import { Variant } from "@mui/material/styles/createTypography";
 import * as React from "react";
 
 
-interface TextBoxProps {
+export interface TextBoxProps {
   text: string,
+  className?: string,
   component?: React.ElementType,
   variant?: Variant,
 }
 
 const TextBox: FC<TextBoxProps> = memo(function TextBox(
-  { text , component = "div", variant = "h6" }
+  { text, className, component = "div", variant = "h6" }
 ) {
   return (
     <Box
+      className={className}
       border={1}
       borderColor="text.secondary"
       borderRadius={theme.shape.borderRadius * 4}
