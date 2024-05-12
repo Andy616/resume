@@ -131,9 +131,26 @@ export const Education: TimelineData[] = [
 
 export const WorkExperience: TimelineData[] = [
   {
+    date: "2024-04 ~ Present",
+    location: "Playsee",
+    title: "AI Engineer / Backend Engineer",
+    content: <ul>
+      <li>
+        Conducted comprehensive analysis and deployment of LLM on Google Kubernetes Engine (GKE), 
+        optimizing hosting methods, and managing high traffic for enhanced performance and scalability.
+      </li>
+      <li>
+        Conducted stress testing and research on cutting-edge LLM models and quantization methods, driving efficiency improvements.
+      </li>
+      <li>
+        Enhanced SDK integrations and applied prompt engineering to tailor LLM prompts to improve interoperability and user experience.
+      </li>
+    </ul>,
+  },
+  {
     date: "2021-05 ~ 2024-01",
     location: "Red Building Capital",
-    title: "Full Stack Developer / Data Engineer",
+    title: "Full Stack Engineer / Data Engineer",
     content: <ul>
       <li>
         Led RESTful API microservices development, boosting system RPS by 30% through migrations to Django, Spring Boot,
