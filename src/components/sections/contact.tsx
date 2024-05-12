@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, memo } from "react";
-import { Link } from "@mui/material";
+import { Link, Container } from "@mui/material";
 import Grid from "@mui/system/Unstable_Grid";
 import Typography from "@mui/material/Typography";
 import IconButton from '@mui/material/IconButton';
@@ -21,7 +21,7 @@ const Contact: FC = memo(function Contact() {
 
   return (
     <Section sectionId={SectionId.Contact}>
-      <Box>
+      <Container fixed sx={{ px: 0 }}>
 
         <SectionTitle 
           textBoxProps={{
@@ -87,7 +87,7 @@ const Contact: FC = memo(function Contact() {
           <Globe/>
         </Box>
 
-      </Box>
+      </Container>
     </Section>
   )
 })
