@@ -12,7 +12,7 @@
     border-radius: 32px;
     box-shadow: 0 0 20px #0f0,
                 inset 0 0 20px #0f0;
-    animation: animate 5s linear infinite;
+    animation: glowy-animation 5s linear infinite;
 }
 
 .textbox::after {
@@ -32,7 +32,7 @@
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 20px #0f0,
                 inset 0 0 20px #0f0;
-    animation: animate 5s linear infinite;
+    animation: glowy-animation 5s linear infinite;
 }
 
 
@@ -52,8 +52,9 @@
     border-radius: 50%;
     box-shadow: 0 0 20px #0f0,
                 inset 0 0 20px #0f0;
-    animation: animate 5s linear infinite;
+    animation: glowy-animation 5s linear infinite;
     /* filter: url(#wavy) blur(1px); */
+    /*-webkit-box-reflect: below 5px linear-gradient(transparent, transparent, #0003);*/
 }
 
 .icon-frame::after {
@@ -69,7 +70,7 @@
     /* filter: url(#wavy) blur(1px); */
 }
 
-@keyframes animate {
+@keyframes glowy-animation {
     0% {
         box-shadow: 0 0 10px #0f0,
                     inset 0 0 10px #0f0;
