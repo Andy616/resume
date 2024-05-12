@@ -234,7 +234,7 @@ export const SocialLinks: Social[] = [
   {
     label: 'LinkedIn',
     Icon: LinkedInIcon,
-    href: 'https://www.linkedin.com/in/%E5%85%83%E6%A6%AE-%E9%83%AD-b64985198/',
+    href: 'https://www.linkedin.com/in/guoyuanrong/',
     text: "Andy Kuo",
   },
   {
