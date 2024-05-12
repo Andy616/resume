@@ -13,7 +13,7 @@ import SectionTitle from "@/components/sections/sectionTitle";
 import { ContactWordings, SectionId, SocialLinks } from "@/data/data";
 import { useBreakpointDetector } from "@/hooks/useBreakpointDetector";
 
-import "@/static/animation.css";
+import "@/static/glowy.css";
 
 
 const Contact: FC = memo(function Contact() {

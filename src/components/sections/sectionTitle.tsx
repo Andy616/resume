@@ -2,7 +2,7 @@ import { FC, memo } from "react";
 import Divider, { DividerProps } from '@mui/material/Divider';
 import TextBox, { TextBoxProps } from "@/components/textbox";
 
-import "@/static/animation.css";
+import "@/static/glowy.css";
 
 
 interface SectionTitleProps {
