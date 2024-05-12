@@ -47,16 +47,12 @@ const Skill: FC<{ skill: SkillType }> = memo(function Skill({ skill }) {
 const SkillGroup: FC<{ skillGroup: SkillGroupType }> = memo(function SkillGroup({ skillGroup }) {
   // todo: dynamically compute height
   return (
-    <Box>
+    <Box className='skillset' sx={{ borderRadius: 4 }}>
+      <span className="border-animation"></span>
       <Paper 
         elevation={4} 
-        sx={{ p: 4, backgroundColor: 'divider', borderRadius: 4, height: 320 }}
-        className="skillset"
+        sx={{ p: 4, backgroundColor: 'divider', borderRadius: 4, height: 300 }}
       >
-        <span className="border-effect"></span>
-        <span className="border-effect"></span>
-        <span className="border-effect"></span>
-        <span className="border-effect"></span>
         <Typography component="div" variant="h6" textAlign="center" sx={{ pb: 2 }}>{skillGroup.name}</Typography>
         {skillGroup.skills.map((skill, idx) => (
           <Box key={idx} sx={{ my: 1 }}>
