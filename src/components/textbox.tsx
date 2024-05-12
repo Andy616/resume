@@ -16,7 +16,7 @@ export interface TextBoxProps {
 }
 
 const TextBox: FC<TextBoxProps> = memo(function TextBox(
-  { text, className, component = "div", variant = "h6" }
+  { text, className, component = "div", variant = "h5" }
 ) {
   return (
     <Box
@@ -24,9 +24,9 @@ const TextBox: FC<TextBoxProps> = memo(function TextBox(
       border={1}
       borderColor="text.secondary"
       borderRadius={theme.shape.borderRadius * 4}
-      sx={{ fontWeight: "bold", p: 2 }}
+      sx={{ p: 2 }}
     >
-      <Typography component={component} variant={variant}>
+      <Typography component={component} variant={variant} sx={{ fontWeight: "bold" }}>
         {text}
       </Typography>
     </Box>

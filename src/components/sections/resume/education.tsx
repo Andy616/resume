@@ -30,10 +30,10 @@ const Education: FC = memo(function Education() {
             <Typography component="div">
               {date}
             </Typography>
-            <Typography component="div" variant="h5" fontWeight="bold">
+            <Typography component="div" variant="h6" fontWeight="bold">
               {location}
             </Typography>
-            <Typography component="div" variant="h6">
+            <Typography component="div" sx={{ color: "text.secondary" }}>
               {title}
             </Typography>
           </Grid>
