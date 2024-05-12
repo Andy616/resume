@@ -6,6 +6,7 @@ import { styled } from '@mui/material/styles';
 import Typography from "@mui/material/Typography";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { CoverflowEffectOptions } from "swiper/types";
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -58,7 +59,14 @@ const SkillGroup: FC<{ skillGroup: SkillGroupType }> = memo(function SkillGroup(
 })
 
 
-const SkillsMobile: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ skillGroups }) {
+export interface SkillProps {
+  skillGroups: SkillGroupType[],
+  coverflowEffect: CoverflowEffectOptions,
+  slideWidth?: number,
+}
+
+
+const SkillsMobile: FC<SkillProps> = memo(function Skills(props) {
   return (
     <>
       <Swiper
@@ -66,13 +74,7 @@ const SkillsMobile: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: -8,
-          stretch: 0,
-          depth: 250,
-          modifier: 2,
-          slideShadows: false,
-        }}
+        coverflowEffect={props.coverflowEffect}
         pagination={{
           clickable: true,
           // dynamicBullets: true,
@@ -80,9 +82,9 @@ const SkillsMobile: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills
         modules={[EffectCoverflow, Pagination]}
       >
         {
-          skillGroups.map((skillGroup, idx) => (
+          props.skillGroups.map((skillGroup, idx) => (
             // add width style here with media query causes error, slides will not be centered
-            <SwiperSlide key={idx} style={{ width: 350 }}>
+            <SwiperSlide key={idx} style={{ width: props.slideWidth ?? 350 }}>
               <SkillGroup skillGroup={skillGroup}/>
             </SwiperSlide>
           ))
@@ -93,7 +95,7 @@ const SkillsMobile: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills
 })
 
 
-const SkillsDesktop: FC<{ skillGroups: SkillGroupType[]}> = memo(function Skills({ skillGroups }) {
+const SkillsDesktop: FC<SkillProps> = memo(function Skills(props) {
 
   return (
     <>
@@ -102,13 +104,7 @@ const SkillsDesktop: FC<{ skillGroups: SkillGroupType[]}> = memo(function Skills
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={'auto'}
-        coverflowEffect={{
-          rotate: -8,
-          stretch: 0,
-          depth: 200,
-          modifier: 2,
-          slideShadows: false,
-        }}
+        coverflowEffect={props.coverflowEffect}
         pagination={{
           clickable: true,
           // dynamicBullets: true,
@@ -116,9 +112,9 @@ const SkillsDesktop: FC<{ skillGroups: SkillGroupType[]}> = memo(function Skills
         modules={[EffectCoverflow, Pagination]}
       >
         {
-          skillGroups.map((skillGroup, idx) => (
+          props.skillGroups.map((skillGroup, idx) => (
             // add width style here with media query causes error, slides will not be centered
-            <SwiperSlide key={idx} style={{ width: 500 }}>
+            <SwiperSlide key={idx} style={{ width: props.slideWidth ?? 500 }}>
               <SkillGroup skillGroup={skillGroup}/>
             </SwiperSlide>
           ))
@@ -132,12 +128,31 @@ const SkillsDesktop: FC<{ skillGroups: SkillGroupType[]}> = memo(function Skills
 const Skills: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ skillGroups }) {
   const isMobile = useBreakpointDetector()
   // can only create 2 different component for mobile and desktop setup
+
+  const slideWidthMobile = 300
+  const coverflowMobile = {
+    rotate: -20,
+    stretch: 0,
+    depth: 150,
+    modifier: 2,
+    slideShadows: false,
+  }
+
+  const slideWidthDesktop = 450
+  const coverflowDesktop = {
+    rotate: -15,
+    stretch: 0,
+    depth: 100,
+    modifier: 2,
+    slideShadows: false,
+  }
+
   return (
     <>
       {
         isMobile ?
-          <SkillsMobile skillGroups={skillGroups}/> :
-          <SkillsDesktop skillGroups={skillGroups}/>
+          <SkillsMobile skillGroups={skillGroups} coverflowEffect={coverflowMobile} slideWidth={slideWidthMobile}/> :
+          <SkillsDesktop skillGroups={skillGroups} coverflowEffect={coverflowDesktop} slideWidth={slideWidthDesktop}/>
       }
     </>
   )
