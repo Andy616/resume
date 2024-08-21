@@ -136,8 +136,7 @@ export const WorkExperience: TimelineData[] = [
     title: "AI Engineer / Backend Engineer",
     content: <ul>
       <li>
-        Conducted comprehensive analysis and deployment of LLM on Google Kubernetes Engine (GKE), 
-        optimizing hosting methods, and managing high traffic for enhanced performance and scalability.
+        Designed and maintained scalable microservices using Gin Gonic, successfully integrating with self-hosted AI models to enhance system capabilities and performance.
       </li>
       <li>
         Conducted stress testing and research on cutting-edge LLM models and quantization methods, driving efficiency improvements.
