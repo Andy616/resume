@@ -65,7 +65,7 @@ export const SkillGroups: SkillGroup[] = [
     name: "Backend Development",
     skills: [
       { name: "Python", level: 90, },
-      { name: "Golang", level: 80, },
+      { name: "Golang", level: 90, },
       { name: "Node.js", level: 70, },
       { name: "Java", level: 70, },
     ]
@@ -143,6 +143,12 @@ export const WorkExperience: TimelineData[] = [
       </li>
       <li>
         Enhanced SDK integrations and applied prompt engineering to tailor LLM prompts to improve interoperability and user experience.
+      </li>
+      <li>
+        Deployed custom AI models as an API server to support batch inference, optimizing system performance and maximizing overall throughput.
+      </li>
+      <li>
+        Developed a robust multi-threaded pipeline to handle streaming inference from multiple AI models and deliver real-time processed video streams to clients.
       </li>
     </ul>,
   },
