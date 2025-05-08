@@ -131,7 +131,7 @@ export const Education: TimelineData[] = [
 
 export const WorkExperience: TimelineData[] = [
   {
-    date: "2024-04 ~ Present",
+    date: "2024-04 ~ 2025-03",
     location: "Playsee",
     title: "AI Engineer / Backend Engineer",
     content: <ul>
