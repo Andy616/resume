@@ -8,7 +8,7 @@ export const useNavObserver = (
 ) => {
 
   useEffect(() => {
-    
+
     // Get all sections
     const headings = document.querySelectorAll(selectors);
     const headingsArray = Array.from(headings);
@@ -49,7 +49,7 @@ export const useNavObserver = (
         // setting threshold may have issues on longer elements on devices with small screen (observer never fires)
         // reference: https://stackoverflow.com/a/66296942/24577447
         threshold: 0,
-        rootMargin: '-70% 0px -70% 0px',
+        rootMargin: '-30% 0px -70% 0px',
       },
     );
     // Observe all the Sections
@@ -60,6 +60,5 @@ export const useNavObserver = (
     return () => {
       observer.disconnect();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Dependency here is the post content.
+  }, [selectors, headerId, handler]);
 };
