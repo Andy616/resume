@@ -5,12 +5,13 @@ import { LinearProgress, Paper, linearProgressClasses } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import Typography from "@mui/material/Typography";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { CoverflowEffectOptions } from "swiper/types";
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import { Skill as SkillType, SkillGroup as SkillGroupType } from '@/data/dataDef';
 import Box from "@/components/box";
@@ -18,6 +19,7 @@ import { useBreakpointDetector } from "@/hooks/useBreakpointDetector";
 
 import "@/static/skills.css";
 
+// TODO: spread out all skills cards, instead of using swiper.
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
@@ -38,7 +40,7 @@ const Skill: FC<{ skill: SkillType }> = memo(function Skill({ skill }) {
       <Typography component="div">
         {skill.name}
       </Typography>
-      <BorderLinearProgress variant="determinate" value={skill.level}/>
+      <BorderLinearProgress variant="determinate" value={skill.level} />
     </>
   )
 })
@@ -49,14 +51,14 @@ const SkillGroup: FC<{ skillGroup: SkillGroupType }> = memo(function SkillGroup(
   return (
     <Box className='skillset' sx={{ borderRadius: 4 }}>
       <span className="border-animation"></span>
-      <Paper 
-        elevation={4} 
+      <Paper
+        elevation={4}
         sx={{ p: 4, backgroundColor: 'divider', borderRadius: 4, height: 300 }}
       >
         <Typography component="div" variant="h6" textAlign="center" sx={{ pb: 2 }}>{skillGroup.name}</Typography>
         {skillGroup.skills.map((skill, idx) => (
           <Box key={idx} sx={{ my: 1 }}>
-            <Skill skill={skill}/>
+            <Skill skill={skill} />
           </Box>
         ))}
       </Paper>
@@ -91,7 +93,7 @@ const SkillsMobile: FC<SkillProps> = memo(function Skills(props) {
           props.skillGroups.map((skillGroup, idx) => (
             // add width style here with media query causes error, slides will not be centered
             <SwiperSlide key={idx} style={{ width: props.slideWidth ?? 350 }}>
-              <SkillGroup skillGroup={skillGroup}/>
+              <SkillGroup skillGroup={skillGroup} />
             </SwiperSlide>
           ))
         }
@@ -115,13 +117,14 @@ const SkillsDesktop: FC<SkillProps> = memo(function Skills(props) {
           clickable: true,
           // dynamicBullets: true,
         }}
-        modules={[EffectCoverflow, Pagination]}
+        navigation={true}
+        modules={[EffectCoverflow, Pagination, Navigation]}
       >
         {
           props.skillGroups.map((skillGroup, idx) => (
             // add width style here with media query causes error, slides will not be centered
             <SwiperSlide key={idx} style={{ width: props.slideWidth ?? 500 }}>
-              <SkillGroup skillGroup={skillGroup}/>
+              <SkillGroup skillGroup={skillGroup} />
             </SwiperSlide>
           ))
         }
@@ -157,8 +160,8 @@ const Skills: FC<{ skillGroups: SkillGroupType[] }> = memo(function Skills({ ski
     <>
       {
         isMobile ?
-          <SkillsMobile skillGroups={skillGroups} coverflowEffect={coverflowMobile} slideWidth={slideWidthMobile}/> :
-          <SkillsDesktop skillGroups={skillGroups} coverflowEffect={coverflowDesktop} slideWidth={slideWidthDesktop}/>
+          <SkillsMobile skillGroups={skillGroups} coverflowEffect={coverflowMobile} slideWidth={slideWidthMobile} /> :
+          <SkillsDesktop skillGroups={skillGroups} coverflowEffect={coverflowDesktop} slideWidth={slideWidthDesktop} />
       }
     </>
   )
