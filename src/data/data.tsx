@@ -25,39 +25,6 @@ export const SectionId = {
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
 /**
- * About section
- */
-export const AboutData: About = {
-  profileImageSrc: "/profile.jpeg",  // root is public folder
-  description: <>
-    {`
-    I'm a passionate Software Engineer based in Taipei,
-    with ${new Date().getFullYear() - 2020} years of experience in the tech industry.
-    Throughout my career, I've tackled a wide array of projects, 
-    from developing scalable web services to crafting AI-driven solutions designed to elevate the user experience.
-    `}
-    <br/><br/>
-    {`
-    My core strengths lie in full-stack web development, data engineering, and machine learning. 
-    I have a keen interest in artificial intelligence and 
-    am constantly seeking new challenges that stretch the limits of current technological capabilities.
-    `}
-    <br/><br/>
-    {`
-    I excel in environments that present complex problems, 
-    as I am always eager to delve into new technologies and methodologies 
-    to refine my skills and push the envelope of what's possible.
-    `}
-  </>,
-  aboutItems: [
-    { label: 'Location', text: 'Taipei, Taiwan', Icon: LocationOnIcon },
-    { label: 'Age', text: (new Date().getFullYear() - 1998).toString(), Icon: CalendarIcon },
-    { label: 'Study', text: 'National Chengchi University', Icon: SchoolIcon },
-    { label: 'Employment', text: 'Playsee Co., Ltd.', Icon: BusinessIcon },
-  ],
-}
-
-/**
  * Skills section
  */
 export const SkillGroups: SkillGroup[] = [
@@ -104,9 +71,9 @@ export const SkillGroups: SkillGroup[] = [
     name: "DevOps",
     skills: [
       { name: "Docker", level: 80, },
-      { name: "Kubernetes", level: 50, },
+      { name: "Kubernetes", level: 60, },
       { name: "AWS", level: 70, },
-      { name: "GCP", level: 40, },
+      { name: "GCP", level: 70, },
     ]
   },
 ]
@@ -116,13 +83,15 @@ export const SkillGroups: SkillGroup[] = [
  */
 export const Education: TimelineData[] = [
   {
-    date: "2019 ~ 2020",
+    start_date: new Date(2019, 7),
+    end_date: new Date(2020, 0),
     location: "TIBAME x Institute for Information Industry",
     title: "AI/Big Data Analyst Course",
     logo: "/tibame.jpeg",
   },
   {
-    date: "2015 ~ 2019",
+    start_date: new Date(2015, 8),
+    end_date: new Date(2019, 5),
     location: "National Chengchi University",
     title: "BA Economics",
     logo: "/National_Chengchi_University_logo.png",
@@ -131,7 +100,8 @@ export const Education: TimelineData[] = [
 
 export const WorkExperience: TimelineData[] = [
   {
-    date: "2024-04 ~ 2025-03",
+    start_date: new Date(2024, 3),
+    end_date: new Date(2025, 2),
     location: "Playsee",
     title: "AI Engineer / Backend Engineer",
     content: <ul>
@@ -153,7 +123,8 @@ export const WorkExperience: TimelineData[] = [
     </ul>,
   },
   {
-    date: "2021-05 ~ 2024-01",
+    start_date: new Date(2021, 4),
+    end_date: new Date(2024, 0),
     location: "Red Building Capital",
     title: "Full Stack Engineer / Data Engineer",
     content: <ul>
@@ -201,7 +172,8 @@ export const WorkExperience: TimelineData[] = [
     </ul>,
   },
   {
-    date: "2020-07 ~ 2021-02",
+    start_date: new Date(2020, 6),
+    end_date: new Date(2021, 1),
     location: "Syncode Encryption Development Provider",
     title: "Backend Engineer",
     content: <ul>
@@ -225,6 +197,39 @@ export const ContactWordings: string = `
   Whether you're interested in discussing a project, sharing opportunities, 
   potential partnerships, or just having a chat, 
   don't hesitate to get in touch! I'm just a message away.`
+
+/**
+ * About section
+ */
+export const AboutData: About = {
+  profileImageSrc: "/profile.jpeg",  // root is public folder
+  description: <>
+    {`
+    I'm a passionate Software Engineer based in Taipei,
+    with ${new Date().getFullYear() - 2020} years of experience in the tech industry.
+    Throughout my career, I've tackled a wide array of projects, 
+    from developing scalable web services to crafting AI-driven solutions designed to elevate the user experience.
+    `}
+    <br /><br />
+    {`
+    My core strengths lie in full-stack web development, data engineering, and machine learning. 
+    I have a keen interest in artificial intelligence and 
+    am constantly seeking new challenges that stretch the limits of current technological capabilities.
+    `}
+    <br /><br />
+    {`
+    I excel in environments that present complex problems, 
+    as I am always eager to delve into new technologies and methodologies 
+    to refine my skills and push the envelope of what's possible.
+    `}
+  </>,
+  aboutItems: [
+    { label: 'Location', text: 'Taipei, Taiwan', Icon: LocationOnIcon },
+    { label: 'Age', text: (new Date().getFullYear() - 1998).toString(), Icon: CalendarIcon },
+    { label: 'Study', text: 'National Chengchi University', Icon: SchoolIcon },
+    { label: 'Employment', text: WorkExperience[0].end_date ? 'Freelance' : WorkExperience[0].location, Icon: BusinessIcon },
+  ],
+}
 
 /**
  * Social items

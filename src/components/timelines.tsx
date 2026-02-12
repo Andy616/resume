@@ -24,17 +24,16 @@ const TimeLines: FC<{ items: TimelineData[] }> = memo(function TimeLines({ items
         },
       }}
     >
-      {items.map(({ date, location, title, content }, idx) => (
+      {items.map(({ start_date, end_date, location, title, content }, idx) => (
         <TimelineItem key={idx}>
           <TimelineOppositeContent color="text.secondary" sx={{ flex: 0.2, display: { xs: 'none', sm: 'block' } }}>
-            {date}
+            {start_date.getFullYear() + "/" + (start_date.getMonth() + 1)} ~ {end_date ? end_date.getFullYear() + "/" + (end_date.getMonth() + 1) : "Present"}
           </TimelineOppositeContent>
           <TimelineSeparator>
-            <TimelineDot/>
-            <TimelineConnector/>
+            <TimelineDot />
+            <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ px: 2, py: 0 }}>
-            <Typography color="text.secondary" component="div" sx={{ display: { xs: 'block', sm: 'none' } }}>{date}</Typography>
             <Typography variant="h6" component="div">
               {title}
               <Typography variant="subtitle1" component="span"> @ {location}</Typography>
