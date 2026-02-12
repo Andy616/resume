@@ -1,142 +1,30 @@
 .swiper {
-    width: 100%;
-    padding-bottom: 48px;
-    margin-top: 36px;
-    margin-bottom: 36px;
+  width: 100%;
+  padding-bottom: 48px;
+  margin-top: 36px;
+  margin-bottom: 36px;
 }
 
 .swiper-slide-active .skillset {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.swiper-slide-active .skillset::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background-image: conic-gradient(transparent, transparent, transparent, #00ccff);
-    animation: border-animation 4s linear infinite;
-}
-
-.swiper-slide-active .skillset::after {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background-image: conic-gradient(transparent, transparent, transparent, #00ccff);
-    animation: border-animation 4s linear infinite;
-    animation-delay: -2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .swiper-slide-active .skillset .MuiPaper-root {
-    margin: 3px;
-    z-index: 2;
-    width: 100%;
-    background-color: transparent;
+  margin: 3px;
+  z-index: 2;
+  width: 100%;
+  background-color: transparent;
 }
 
 .swiper-slide-active .skillset .border-animation {
-    position: absolute;
-    inset: 3px;
-    z-index: 1;
-    border-radius: 16px;
-    /* this is the real background color for active slide */
-    background-color: #5d476f;
-}
-
-
-@keyframes border-animation  {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-
-/* effect on top border */
-.swiper-slide-active .skillset .border-effect:nth-child(1) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, transparent, #17c9ff);
-    animation: animate1 2s linear infinite;
- }
-
-@keyframes animate1 {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-/* effect on right border */
-.swiper-slide-active .skillset .border-effect:nth-child(2) {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent, #17c9ff);
-    animation: animate2 2s linear infinite;
-    animation-delay: 1s;
- }
-
-@keyframes animate2 {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(100%);
-    }
-}
-
-/* effect on bottom border */
-.swiper-slide-active .skillset .border-effect:nth-child(3) {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to left, transparent, #17c9ff);
-    animation: animate3 2s linear infinite;
- }
-
-@keyframes animate3 {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-/* effect on left border */
-.swiper-slide-active .skillset .border-effect:nth-child(4) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(to top, transparent, #17c9ff);
-    animation: animate4 2s linear infinite;
-    animation-delay: 1s;
- }
-
-@keyframes animate4 {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(-100%);
-    }
+  position: absolute;
+  inset: 3px;
+  z-index: 1;
+  border-radius: 16px;
+  /* this is the real background color for active slide */
+  background-color: transparent;
 }

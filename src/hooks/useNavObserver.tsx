@@ -1,14 +1,11 @@
 import { useEffect } from 'react';
 
-
 export const useNavObserver = (
   selectors: string,
   headerId: string,
   handler: (section: number) => void
 ) => {
-
   useEffect(() => {
-    
     // Get all sections
     const headings = document.querySelectorAll(selectors);
     const headingsArray = Array.from(headings);
@@ -16,15 +13,17 @@ export const useNavObserver = (
 
     // Create the IntersectionObserver API
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           const currentY = entry.boundingClientRect.y;
           const id = entry.target.getAttribute('id');
           if (headerWrapper) {
             // Create a decision object
             const decision = {
               id,
-              currentIndex: headingsArray.findIndex(heading => heading.getAttribute('id') === id),
+              currentIndex: headingsArray.findIndex(
+                (heading) => heading.getAttribute('id') === id
+              ),
               isIntersecting: entry.isIntersecting,
               currentRatio: entry.intersectionRatio,
               aboveToc: currentY < headerWrapper.getBoundingClientRect().y,
@@ -49,17 +48,16 @@ export const useNavObserver = (
         // setting threshold may have issues on longer elements on devices with small screen (observer never fires)
         // reference: https://stackoverflow.com/a/66296942/24577447
         threshold: 0,
-        rootMargin: '-70% 0px -70% 0px',
-      },
+        rootMargin: '-30% 0px -70% 0px',
+      }
     );
     // Observe all the Sections
-    headings.forEach(section => {
+    headings.forEach((section) => {
       observer.observe(section);
     });
     // Cleanup
     return () => {
       observer.disconnect();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Dependency here is the post content.
+  }, [selectors, headerId, handler]);
 };

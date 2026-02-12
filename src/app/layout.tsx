@@ -5,9 +5,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Metadata } from 'next';
 
 import theme from './theme';
-import "@/static/background.css";
-import { SiteMetadata } from "@/data/data";
-
+import '@/static/background.css';
+import { SiteMetadata } from '@/data/data';
 
 export const metadata: Metadata = {
   title: SiteMetadata.title,
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-}
+};
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (

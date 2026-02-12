@@ -1,7 +1,6 @@
-import { SvgIconTypeMap } from "@mui/material";
-import { OverridableComponent } from "@mui/types";
-import React from "react";
-
+import { SvgIconTypeMap } from '@mui/material';
+import { OverridableComponent } from '@mui/types';
+import React from 'react';
 
 /**
  * About section
@@ -35,7 +34,8 @@ export interface SkillGroup {
  * Resume section
  */
 export interface TimelineData {
-  date: string;
+  start_date: Date;
+  end_date?: Date;
   location: string;
   title: string;
   content?: string | React.ReactElement;

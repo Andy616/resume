@@ -5,13 +5,11 @@ import { createTheme } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
 import { PaletteMode, ThemeOptions } from '@mui/material';
 
-
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
 });
-
 
 const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
   palette: {
@@ -39,6 +37,6 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
   },
 });
 
-const theme = createTheme(getDesignTokens('dark'))
+const theme = createTheme(getDesignTokens('dark'));
 
 export default theme;

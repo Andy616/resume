@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { FC, memo, useState, useMemo, useCallback } from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -8,17 +8,17 @@ import Tab from '@mui/material/Tab';
 import { SectionId } from '@/data/data';
 import { useNavObserver } from '@/hooks/useNavObserver';
 
-
 function samePageLinkNavigation(
-  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 ) {
-  return !(event.defaultPrevented ||
+  return !(
+    event.defaultPrevented ||
     event.button !== 0 || // ignore everything but left-click
     event.metaKey ||
     event.ctrlKey ||
     event.altKey ||
     event.shiftKey
-  )
+  );
 }
 
 interface LinkTabProps {
@@ -29,14 +29,9 @@ interface LinkTabProps {
 
 function LinkTab(props: LinkTabProps) {
   return (
-    <Tab
-      component="a"
-      aria-current={props.selected && 'page'}
-      {...props}
-    />
+    <Tab component="a" aria-current={props.selected && 'page'} {...props} />
   );
 }
-
 
 const Header: FC = memo(function Header() {
   const headerId = 'headerNav';
@@ -49,33 +44,38 @@ const Header: FC = memo(function Header() {
       event.type !== 'click' ||
       (event.type === 'click' &&
         samePageLinkNavigation(
-          event as React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+          event as React.MouseEvent<HTMLAnchorElement, MouseEvent>
         ))
     ) {
       setCurrentSection(newValue);
     }
   };
 
-  const navSections = useMemo(
-    () => Object.values(SectionId),
-    [],
-  );
+  const navSections = useMemo(() => Object.values(SectionId), []);
 
   const intersectionHandler = useCallback(
-    (section: number) => setCurrentSection(section),
-    [],
+    (section: number) => {
+      setCurrentSection(section);
+      if (navSections[section]) {
+        window.history.replaceState(null, '', `#${navSections[section]}`);
+      }
+    },
+    [navSections]
   );
 
   useNavObserver(
-    navSections.map(section => `#${section}`).join(','), 
+    navSections.map((section) => `#${section}`).join(','),
     headerId,
-    intersectionHandler,
+    intersectionHandler
   );
 
   return (
-    <AppBar color="transparent" sx={{ backdropFilter: 'blur(4px)' }} id={headerId}>
+    <AppBar
+      color="transparent"
+      sx={{ backdropFilter: 'blur(4px)' }}
+      id={headerId}
+    >
       <Toolbar sx={{ alignSelf: 'center' }}>
-
         <Tabs
           value={currentSection}
           onChange={handleChange}
@@ -83,13 +83,12 @@ const Header: FC = memo(function Header() {
           role="navigation"
         >
           {Object.values(SectionId).map((section) => (
-            <LinkTab key={section} label={section} href={`#${section}`}/>
+            <LinkTab key={section} label={section} href={`#${section}`} />
           ))}
         </Tabs>
-
       </Toolbar>
     </AppBar>
-  )
-})
+  );
+});
 
 export default Header;
