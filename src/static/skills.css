@@ -1,30 +1,30 @@
 .swiper {
-    width: 100%;
-    padding-bottom: 48px;
-    margin-top: 36px;
-    margin-bottom: 36px;
+  width: 100%;
+  padding-bottom: 48px;
+  margin-top: 36px;
+  margin-bottom: 36px;
 }
 
 .swiper-slide-active .skillset {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .swiper-slide-active .skillset .MuiPaper-root {
-    margin: 3px;
-    z-index: 2;
-    width: 100%;
-    background-color: transparent;
+  margin: 3px;
+  z-index: 2;
+  width: 100%;
+  background-color: transparent;
 }
 
 .swiper-slide-active .skillset .border-animation {
-    position: absolute;
-    inset: 3px;
-    z-index: 1;
-    border-radius: 16px;
-    /* this is the real background color for active slide */
-    background-color: transparent;
+  position: absolute;
+  inset: 3px;
+  z-index: 1;
+  border-radius: 16px;
+  /* this is the real background color for active slide */
+  background-color: transparent;
 }

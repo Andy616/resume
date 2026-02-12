@@ -1,100 +1,110 @@
 .textbox {
-    position: relative;
+  position: relative;
 }
 
 .textbox::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 32px;
-    box-shadow: 0 0 20px #fff,
-                inset 0 0 20px #fff;
-    /*animation: glowy-animation 5s linear infinite;*/
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  box-shadow:
+    0 0 20px #fff,
+    inset 0 0 20px #fff;
+  /*animation: glowy-animation 5s linear infinite;*/
 }
 
 .textbox::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 32px;
-    box-shadow: 0 0 20px #fff,
-                inset 0 0 20px #fff;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  box-shadow:
+    0 0 20px #fff,
+    inset 0 0 20px #fff;
 }
 
-
-.divider::before, .divider::after {
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 20px #0f0,
-                inset 0 0 20px #0f0;
-    animation: glowy-animation 5s linear infinite;
+.divider::before,
+.divider::after {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 0 20px #0f0,
+    inset 0 0 20px #0f0;
+  animation: glowy-animation 5s linear infinite;
 }
-
 
 .icon-frame {
-    position: relative;
+  position: relative;
 }
 
 .icon-frame::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* border: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* border: 1;
     border-color: #fff; */
-    border-radius: 50%;
-    box-shadow: 0 0 20px #0f0,
-                inset 0 0 20px #0f0;
-    animation: glowy-animation 5s linear infinite;
-    /* filter: url(#wavy) blur(1px); */
-    /*-webkit-box-reflect: below 5px linear-gradient(transparent, transparent, #0003);*/
+  border-radius: 50%;
+  box-shadow:
+    0 0 20px #0f0,
+    inset 0 0 20px #0f0;
+  animation: glowy-animation 5s linear infinite;
+  /* filter: url(#wavy) blur(1px); */
+  /*-webkit-box-reflect: below 5px linear-gradient(transparent, transparent, #0003);*/
 }
 
 .icon-frame::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #fff,
-                inset 0 0 10px #fff;
-    /* filter: url(#wavy) blur(1px); */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px #fff,
+    inset 0 0 10px #fff;
+  /* filter: url(#wavy) blur(1px); */
 }
 
 @keyframes glowy-animation {
-    0% {
-        box-shadow: 0 0 10px #0f0,
-                    inset 0 0 10px #0f0;
-        filter: hue-rotate(0deg);
-    }
-    20% {
-        box-shadow: 0 0 20px #0f0,
-                    inset 0 0 20px #0f0;
-    }
-    40% {
-        box-shadow: 0 0 10px #0f0,
-                    inset 0 0 10px #0f0;
-    }
-    60% {
-        box-shadow: 0 0 20px #0f0,
-                    inset 0 0 20px #0f0;
-    }
-    80% {
-        box-shadow: 0 0 20px #0f0,
-                    inset 0 0 20px #0f0;
-    }
-    100% {
-        box-shadow: 0 0 10px #0f0,
-                    inset 0 0 10px #0f0;
-        filter: hue-rotate(360deg);
-    }
+  0% {
+    box-shadow:
+      0 0 10px #0f0,
+      inset 0 0 10px #0f0;
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    box-shadow:
+      0 0 20px #0f0,
+      inset 0 0 20px #0f0;
+  }
+  40% {
+    box-shadow:
+      0 0 10px #0f0,
+      inset 0 0 10px #0f0;
+  }
+  60% {
+    box-shadow:
+      0 0 20px #0f0,
+      inset 0 0 20px #0f0;
+  }
+  80% {
+    box-shadow:
+      0 0 20px #0f0,
+      inset 0 0 20px #0f0;
+  }
+  100% {
+    box-shadow:
+      0 0 10px #0f0,
+      inset 0 0 10px #0f0;
+    filter: hue-rotate(360deg);
+  }
 }

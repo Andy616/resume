@@ -1,20 +1,20 @@
 body {
-    /* background: linear-gradient(180deg, #00bdff, #d341ed, #9166f5, #050251); */
-    background: linear-gradient(180deg, #00b3ff, #4c1256, #12003d, #02002f);
-    /* background-size: 200% 200%;
+  /* background: linear-gradient(180deg, #00bdff, #d341ed, #9166f5, #050251); */
+  background: linear-gradient(180deg, #00b3ff, #4c1256, #12003d, #02002f);
+  /* background-size: 200% 200%;
     animation: gradient 10s ease infinite; */
 }
 
 @keyframes gradient {
-    0% {
-        background-position: 0% 60%;
-    }
+  0% {
+    background-position: 0% 60%;
+  }
 
-    30% {
-        background-position: 100% 60%;
-    }
+  30% {
+    background-position: 100% 60%;
+  }
 
-    100% {
-        background-position: 0% 60%;
-    }
+  100% {
+    background-position: 0% 60%;
+  }
 }

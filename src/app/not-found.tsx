@@ -1,10 +1,9 @@
-import { Container, Button } from "@mui/material";
+import { Container, Button } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
-import Typography from "@mui/material/Typography";
+import Typography from '@mui/material/Typography';
 
-import Globe from "@/components/globe";
-import Box from "@/components/box";
-
+import Globe from '@/components/globe';
+import Box from '@/components/box';
 
 export default function NotFound() {
   return (
@@ -18,8 +17,13 @@ export default function NotFound() {
         alignItems: 'center',
         flexDirection: 'column',
         flexWrap: 'nowrap',
-    }}>
-      <Typography component={'div'} variant={'h5'} sx={{ fontWeight: "bold", my: 2, textAlign: 'center' }}>
+      }}
+    >
+      <Typography
+        component={'div'}
+        variant={'h5'}
+        sx={{ fontWeight: 'bold', my: 2, textAlign: 'center' }}
+      >
         {`Looks like you've got lost! Let's go home!`}
       </Typography>
 
@@ -32,9 +36,8 @@ export default function NotFound() {
         Home
       </Button>
       <Box sx={{ my: 2, width: '100%', height: '60vh' }}>
-        <Globe/>
+        <Globe />
       </Box>
-
     </Container>
-  )
+  );
 }
