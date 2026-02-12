@@ -54,8 +54,13 @@ const Header: FC = memo(function Header() {
   const navSections = useMemo(() => Object.values(SectionId), []);
 
   const intersectionHandler = useCallback(
-    (section: number) => setCurrentSection(section),
-    []
+    (section: number) => {
+      setCurrentSection(section);
+      if (navSections[section]) {
+        window.history.replaceState(null, '', `#${navSections[section]}`);
+      }
+    },
+    [navSections]
   );
 
   useNavObserver(
