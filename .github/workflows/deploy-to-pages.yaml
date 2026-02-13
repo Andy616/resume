@@ -56,7 +56,7 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Restore dependency cache
         id: cache-dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
@@ -64,7 +64,7 @@ jobs:
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Restore nextjs cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             .next/cache
@@ -104,7 +104,7 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Restore dependency cache
         id: cache-dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}
@@ -112,7 +112,7 @@ jobs:
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Restore nextjs cache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             .next/cache
