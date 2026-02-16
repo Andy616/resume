@@ -215,7 +215,7 @@ export const WorkExperience: TimelineData[] = [
   },
 ];
 
-export const ContactWordings: string = `
+export const ContactWordings = `
   I'm passionate about what I do and always eager to engage with like-minded individuals. 
   Whether you're interested in discussing a project, sharing opportunities, 
   potential partnerships, or just having a chat, 
