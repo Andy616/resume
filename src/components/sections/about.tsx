@@ -1,6 +1,6 @@
 import { FC, memo } from 'react';
 import Container from '@mui/material/Container';
-import Grid from '@mui/system/Unstable_Grid';
+import Grid from '@mui/material/Grid';
 import { Avatar, Paper, Stack } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
@@ -14,7 +14,7 @@ const About: FC = memo(function About() {
     <Section sectionId={SectionId.About}>
       <Container fixed sx={{ mt: 8, px: 0 }}>
         <Grid container sx={{ justifyContent: 'center' }}>
-          <Grid xs={12} md={3} alignContent="center">
+          <Grid size={{ xs: 12, md: 3 }} alignContent="center">
             <Avatar
               alt="profile picture"
               src={profileImageSrc}
@@ -26,8 +26,7 @@ const About: FC = memo(function About() {
 
           <Grid
             container
-            xs={12}
-            md={6}
+            size={{ xs: 12, md: 6 }}
             sx={{
               alignItems: 'center',
               justifyContent: 'center',
@@ -65,7 +64,7 @@ const About: FC = memo(function About() {
 
             <Grid container sx={{ m: 4 }}>
               {aboutItems.map(({ label, text, Icon }, idx) => (
-                <Grid xs={12} sm={6} key={idx} sx={{ p: 2 }}>
+                <Grid size={{ xs: 12, sm: 6 }} key={idx} sx={{ p: 2 }}>
                   <Stack direction="row">
                     {Icon && <Icon />}
                     <Box component="span" sx={{ fontWeight: 'bold', mx: 1 }}>

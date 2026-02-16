@@ -1,7 +1,7 @@
 'use client';
 
 import { FC, memo } from 'react';
-import Grid from '@mui/system/Unstable_Grid';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { Avatar } from '@mui/material';
 
@@ -14,8 +14,12 @@ const Education: FC = memo(function Education() {
     <Grid container>
       {EducationData.map(
         ({ start_date, end_date, location, title, logo }, idx) => (
-          <Grid key={idx} container xs={12} sm={6} sx={{ my: 4 }}>
-            <Grid xs={12} sm={3} display="flex" justifyContent="center">
+          <Grid key={idx} container size={{ xs: 12, sm: 6 }} sx={{ my: 4 }}>
+            <Grid
+              size={{ xs: 12, sm: 3 }}
+              display="flex"
+              justifyContent="center"
+            >
               <Avatar
                 alt={`${location} logo`}
                 src={logo}
@@ -23,8 +27,7 @@ const Education: FC = memo(function Education() {
               />
             </Grid>
             <Grid
-              xs={12}
-              sm={9}
+              size={{ xs: 12, sm: 9 }}
               sx={{
                 textAlign: isMobile ? 'center' : 'left',
                 mt: isMobile ? 2 : 0,
