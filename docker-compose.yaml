@@ -1,7 +1,6 @@
 services:
   app:
-    container_name: app
-    restart: always
+    restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile
