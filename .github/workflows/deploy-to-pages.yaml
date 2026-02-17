@@ -54,6 +54,8 @@ jobs:
         with:
           node-version: '25'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Enable Corepack
+        run: corepack enable
       - name: Restore dependency cache
         id: cache-dependencies
         uses: actions/cache@v4
@@ -102,6 +104,8 @@ jobs:
         with:
           node-version: '25'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Enable Corepack
+        run: corepack enable
       - name: Restore dependency cache
         id: cache-dependencies
         uses: actions/cache@v4
