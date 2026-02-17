@@ -2,7 +2,7 @@
 
 import { FC, memo } from 'react';
 import { Link, Container } from '@mui/material';
-import Grid from '@mui/system/Unstable_Grid';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 
@@ -33,7 +33,7 @@ const Contact: FC = memo(function Contact() {
 
         <Grid container spacing={4}>
           {SocialLinks.map((social, idx) => (
-            <Grid key={idx} xs={12} sm={4} textAlign={'center'}>
+            <Grid key={idx} size={{ xs: 12, sm: 4 }} textAlign={'center'}>
               <IconButton
                 aria-label={social.label}
                 href={social.href}
