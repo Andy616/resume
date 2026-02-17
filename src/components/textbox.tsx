@@ -3,15 +3,14 @@
 import { FC, memo } from 'react';
 import theme from '@/app/theme';
 import Box from '@/components/box';
-import Typography from '@mui/material/Typography';
-import { Variant } from '@mui/material/styles/createTypography';
+import Typography, { TypographyProps } from '@mui/material/Typography';
 import * as React from 'react';
 
 export interface TextBoxProps {
   text: string;
   className?: string;
   component?: React.ElementType;
-  variant?: Variant;
+  variant?: TypographyProps['variant'];
 }
 
 const TextBox: FC<TextBoxProps> = memo(function TextBox({
@@ -25,7 +24,7 @@ const TextBox: FC<TextBoxProps> = memo(function TextBox({
       className={className}
       border={1}
       borderColor="text.secondary"
-      borderRadius={theme.shape.borderRadius * 4}
+      borderRadius={(theme.shape.borderRadius as number) * 4}
       sx={{ p: 2 }}
     >
       <Typography
