@@ -106,33 +106,69 @@ export const Education: TimelineData[] = [
 
 export const WorkExperience: TimelineData[] = [
   {
-    start_date: new Date(2024, 3),
-    end_date: new Date(2025, 2),
-    location: 'Playsee',
-    title: 'AI Engineer / Backend Engineer',
+    start_date: new Date(2025, 5),
+    end_date: undefined,
+    location: 'GUMHK',
+    title: 'Senior Backend Engineer',
     content: (
       <ul>
         <li>
-          Designed and maintained scalable microservices using Gin Gonic,
-          successfully integrating with self-hosted AI models to enhance system
-          capabilities and performance.
+          Develop and refactor production backend services using FastAPI within
+          a 4-engineer team, improving maintainability and architectural
+          consistency.
         </li>
         <li>
-          Conducted stress testing and research on cutting-edge LLM models and
-          quantization methods, driving efficiency improvements.
+          Migrated dependency management from pip to uv, reducing CI/CD build
+          time by 2~3 times and improving environment reproducibility.
         </li>
         <li>
-          Enhanced SDK integrations and applied prompt engineering to tailor LLM
-          prompts to improve interoperability and user experience.
+          Re-architected CRUD layer using polymorphism, eliminating ~50%
+          duplicated logic and reducing technical debt.
         </li>
         <li>
-          Deployed custom AI models as an API server to support batch inference,
-          optimizing system performance and maximizing overall throughput.
+          Decoupled JWT authentication and RBAC into reusable FastAPI dependency
+          injection components, improving separation of concerns and API
+          composability.
         </li>
         <li>
-          Developed a robust multi-threaded pipeline to handle streaming
-          inference from multiple AI models and deliver real-time processed
-          video streams to clients.
+          Designed and implemented GitHub Actions CI/CD pipelines, containerized
+          with Docker, and deployed to AWS EC2, optimizing cost without
+          overengineering infrastructure.
+        </li>
+        <li>
+          Proposed long-term migration roadmap to transition highly customized
+          Odoo monolith toward a microservices-based architecture.
+        </li>
+      </ul>
+    ),
+  },
+  {
+    start_date: new Date(2024, 3),
+    end_date: new Date(2025, 2),
+    location: 'Playsee',
+    title: 'Backend Engineer / AI Engineer',
+    content: (
+      <ul>
+        <li>
+          Designed scalable microservices using Gin (Go) integrated with
+          self-hosted LLMs for production AI workloads.
+        </li>
+        <li>
+          Built high concurrency streaming inference pipelines to generate
+          real-time video streams across multiple AI models via Goroutines and
+          Channels.
+        </li>
+        <li>
+          Architected API-layer batch inference mechanism for custom AI models,
+          optimizing throughput and reducing per-request inference overhead.
+        </li>
+        <li>
+          Conducted stress testing and LLM quantization research to optimize
+          inference efficiency and system scalability.
+        </li>
+        <li>
+          Improved LLM interoperability through SDK optimization and applied
+          prompt engineering techniques.
         </li>
       </ul>
     ),
@@ -141,55 +177,28 @@ export const WorkExperience: TimelineData[] = [
     start_date: new Date(2021, 4),
     end_date: new Date(2024, 0),
     location: 'Red Building Capital',
-    title: 'Full Stack Engineer / Data Engineer',
+    title: 'Backend Engineer / Data Engineer',
     content: (
       <ul>
         <li>
-          Led RESTful API microservices development, boosting system RPS by 30%
-          through migrations to Django, Spring Boot, FastAPI, and Gin Gonic.
+          Led development of RESTful microservices across FastAPI, Gin, Spring
+          Boot, and Django, increasing system RPS by 30%.
         </li>
         <li>
-          Implemented a robust OAuth2 authentication system, significantly
-          enhancing internal security and data integrity.
+          Designed OAuth2-based authentication and implemented
+          Elasticsearch-powered geographic search.
         </li>
         <li>
-          Developed a geographic search system using Elasticsearch, improving
-          location-based service efficiency and user satisfaction.
+          Built CI/CD pipelines reducing deployment time by 50% and
+          containerized services with Docker & Kubernetes (EKS).
         </li>
         <li>
-          Streamlined development with CI/CD pipelines, cutting deployment times
-          by 50% and accelerating project delivery.
+          Developed automated data pipelines and monitoring systems using cron
+          jobs, Elasticsearch, and Grafana.
         </li>
         <li>
-          Containerized VM projects with Docker and managed with Kubernetes,
-          achieving scalable and reliable infrastructure.
-        </li>
-        <li>
-          Automated data processing with cronjobs, Elasticsearch, and Grafana,
-          enabling real-time insights and data-driven decisions.
-        </li>
-        <li>
-          Developed deep learning models for image recognition, significantly
-          improving application AI features and user interaction.
-        </li>
-        <li>
-          Pioneered the development of Web3 programs, focusing on ERC-4337
-          standards, blockchain event monitoring, and seamless integration with
-          Web2 platforms.
-        </li>
-        <li>
-          Authored K6 testing scripts, optimizing system performance and
-          ensuring stability under load.
-        </li>
-        <li>
-          Developed responsive web applications using Vue3, boosting user
-          engagement by 10%.
-        </li>
-        <li>
-          Developed scalable services using AWS SDK, leveraging S3 for robust
-          data storage solutions, RDS for reliable database management, EKS for
-          container orchestration, and EC2 with Security Groups for enhanced
-          security and scalability.
+          Built responsive web applications, and Web3 integrations (ERC-4337),
+          blockchain event monitoring.
         </li>
       </ul>
     ),
@@ -203,12 +212,12 @@ export const WorkExperience: TimelineData[] = [
       <ul>
         <li>Designed and implemented scalable RESTful APIs using Django.</li>
         <li>
-          Seamlessly integrated Google OAuth2 for authentication in the web
-          application, bolstering security and simplifying the sign-in process.
+          Integrated Google OAuth2 authentication to enhance security and user
+          experience.
         </li>
         <li>
-          Led the deployment of multiple projects on Google Cloud Platform using
-          Docker, achieving 30% reduction in deployment times.
+          Containerized and deployed services to Google Cloud Platform, reducing
+          deployment time by 30%.
         </li>
       </ul>
     ),
@@ -229,25 +238,17 @@ export const AboutData: About = {
   description: (
     <>
       {`
-    I'm a passionate Software Engineer based in Taipei,
-    with ${new Date().getFullYear() - 2020} years of experience in the tech industry.
-    Throughout my career, I've tackled a wide array of projects, 
-    from developing scalable web services to crafting AI-driven solutions designed to elevate the user experience.
-    `}
-      <br />
-      <br />
-      {`
-    My core strengths lie in full-stack web development, data engineering, and machine learning. 
-    I have a keen interest in artificial intelligence and 
-    am constantly seeking new challenges that stretch the limits of current technological capabilities.
-    `}
-      <br />
+      Backend engineer specializing in scalable distributed systems and high-throughput API design. 
+      Led architectural refactors reducing duplicated backend logic by ~50% and accelerated CI/CD pipelines by 2~3 times through tooling optimization. 
+      Designed batch inference mechanisms for production AI model serving and improved system RPS by 30% across microservice migrations. 
+      Experienced in cloud-native infrastructure (AWS, Kubernetes, Docker) and building reliable, maintainable backend platforms at scale.
+      `}
       <br />
       {`
-    I excel in environments that present complex problems, 
-    as I am always eager to delve into new technologies and methodologies 
-    to refine my skills and push the envelope of what's possible.
-    `}
+      I excel in environments that present complex problems, 
+      as I am always eager to delve into new technologies and methodologies 
+      to refine my skills and push the envelope of what's possible.
+      `}
     </>
   ),
   aboutItems: [
